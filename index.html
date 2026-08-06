@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUTRA AZARI // Cyber Security & VPS Infrastructure Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            bg: '#080c14',
+                            panel: '#0f172a',
+                            card: '#131e32',
+                            cyan: '#00f0ff',
+                            green: '#10b981',
+                            purple: '#8b5cf6',
+                            accent: '#38bdf8'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-cyber-bg text-slate-200 font-sans selection:bg-cyan-500 selection:text-black min-h-screen relative overflow-x-hidden">
+    
+    <div class="fixed inset-0 pointer-events-none z-50 opacity-20 scanline-overlay"></div>
+    <div class="fixed inset-0 pointer-events-none z-0 bg-[radial-gradient(#00f0ff_1px,transparent_1px)] [background-size:32px_32px] opacity-10"></div>
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-40 bg-cyber-bg/85 backdrop-blur-md border-b border-cyan-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-500 flex items-center justify-center text-black font-bold text-xl shadow-[0_0_15px_rgba(0,240,255,0.4)]">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <div>
+                        <a href="#" class="font-mono font-bold text-lg tracking-wider text-white flex items-center gap-2">
+                            PUTRA_AZARI<span class="text-cyan-400 animate-pulse">_</span>
+                        </a>
+                        <p class="text-[10px] font-mono text-cyan-400 tracking-widest uppercase">Threat Intel & System Admin</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8 font-mono text-sm">
+                    <a href="#about" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5"><span class="text-cyan-500">01.</span>//About</a>
+                    <a href="#maltego" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5"><span class="text-cyan-500">02.</span>//Maltego_Intel</a>
+                    <a href="#forensics" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5"><span class="text-cyan-500">03.</span>//Forensics</a>
+                    <a href="#vps" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5"><span class="text-cyan-500">04.</span>//VPS_Servers</a>
+                    <a href="#projects" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5"><span class="text-cyan-500">05.</span>//Case_Logs</a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="#terminal-section" class="px-4 py-2 text-xs font-mono rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/40 hover:bg-cyan-500/20 transition-all flex items-center gap-2 shadow-[0_0_10px_rgba(0,240,255,0.2)]">
+                        <i class="fa-solid fa-code"></i> CLI_Console
+                    </a>
+                    <a href="#contact" class="px-4 py-2 text-xs font-mono font-semibold rounded bg-gradient-to-r from-cyan-500 to-emerald-500 text-black hover:opacity-90 transition-all shadow-[0_0_15px_rgba(0,240,255,0.4)]">
+                        Initialize_Contact
+                    </a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-cyan-400 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-cyber-panel border-b border-cyan-500/30 px-4 pt-2 pb-6 space-y-3 font-mono text-sm">
+            <a href="#about" class="block py-2 hover:text-cyan-400">// 01. About</a>
+            <a href="#maltego" class="block py-2 hover:text-cyan-400">// 02. Maltego OSINT</a>
+            <a href="#forensics" class="block py-2 hover:text-cyan-400">// 03. Forensics</a>
+            <a href="#vps" class="block py-2 hover:text-cyan-400">// 04. VPS Infra</a>
+            <a href="#projects" class="block py-2 hover:text-cyan-400">// 05. Projects</a>
+            <a href="#contact" class="block py-2 text-cyan-400 font-bold">// Initialize Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-mono text-xs">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                        <span>SYSTEM ONLINE &bull; AVAILABLE FOR THREAT ANALYSIS & VPS DEPLOYMENT</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        PUTRA AZARI<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-purple-500">
+                            CYBER FORENSICS & INFRA ARCHITECT
+                        </span>
+                    </h1>
+                    
+                    <p class="text-slate-400 text-base sm:text-lg max-w-2xl font-sans leading-relaxed">
+                        Spesialis dalam investigasi intelijen <span class="text-cyan-300 font-semibold">Maltego OSINT</span>, analisis <span class="text-emerald-300 font-semibold">Digital Forensics</span> (Memory/Disk/Network), serta perancangan &amp; pengamanan infrastruktur <span class="text-purple-300 font-semibold">High-Performance VPS Linux Server</span>.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#maltego-demo" class="px-6 py-3 rounded bg-gradient-to-r from-cyan-500 to-emerald-500 text-black font-mono font-bold text-sm hover:shadow-[0_0_20px_rgba(0,240,255,0.5)] transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-sitemap"></i> Launch Graph Demo
+                        </a>
+                        <a href="#vps" class="px-6 py-3 rounded bg-cyber-panel border border-cyan-500/40 text-cyan-400 font-mono text-sm hover:border-cyan-400 hover:bg-cyan-500/10 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-server"></i> VPS Telemetry Dashboard
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800 font-mono">
+                        <div>
+                            <div class="text-2xl font-bold text-cyan-400">350+</div>
+                            <div class="text-xs text-slate-500 uppercase">Entities Mapped</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-emerald-400">99.99%</div>
+                            <div class="text-xs text-slate-500 uppercase">VPS Uptime Rate</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-400">120+</div>
+                            <div class="text-xs text-slate-500 uppercase">Forensics Artifacts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MALTEGO GRAPH SIMULATOR MINI HUD -->
+                <div class="lg:col-span-5">
+                    <div class="bg-cyber-panel border border-cyan-500/30 rounded-xl p-4 shadow-[0_0_30px_rgba(0,240,255,0.15)] relative">
+                        <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800 font-mono text-xs text-slate-400">
+                            <span class="flex items-center gap-2 text-cyan-400">
+                                <i class="fa-solid fa-circle text-[8px] text-emerald-400 animate-pulse"></i>
+                                MALTEGO_GRAPH_LIVE_FEED
+                            </span>
+                            <span>TARGET: ENTITY_NODE_09</span>
+                        </div>
+                        
+                        <div class="relative h-72 bg-slate-950/80 rounded border border-slate-800 overflow-hidden flex items-center justify-center">
+                            <canvas id="heroGraphCanvas" class="w-full h-full cursor-crosshair"></canvas>
+                            <div class="absolute bottom-2 left-2 text-[10px] font-mono text-slate-500 bg-slate-900/90 px-2 py-1 rounded border border-slate-800">
+                                <i class="fa-solid fa-mouse-pointer text-cyan-400 mr-1"></i> Move cursor to interact with nodes
+                            </div>
+                        </div>
+
+                        <div class="mt-3 grid grid-cols-2 gap-2 text-xs font-mono text-slate-300">
+                            <div class="bg-slate-900/60 p-2 rounded border border-slate-800 flex justify-between items-center">
+                                <span class="text-slate-500">Transforms:</span>
+                                <span class="text-emerald-400">Active (24)</span>
+                            </div>
+                            <div class="bg-slate-900/60 p-2 rounded border border-slate-800 flex justify-between items-center">
+                                <span class="text-slate-500">OSINT Source:</span>
+                                <span class="text-cyan-400">Shodan / WHOIS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 bg-cyber-panel/50 border-y border-cyan-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-start gap-12">
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl blur opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative w-64 h-80 bg-slate-900 rounded-xl overflow-hidden border border-cyan-500/40 p-3 flex flex-col justify-between">
+                            <div class="h-full bg-slate-950 rounded border border-slate-800 p-4 flex flex-col items-center justify-center text-center space-y-4">
+                                <div class="w-24 h-24 rounded-full bg-gradient-to-b from-cyan-500/20 to-purple-500/20 border-2 border-cyan-400 flex items-center justify-center text-4xl text-cyan-400 shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+                                    <i class="fa-solid fa-user-ninja"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-mono font-bold text-white text-lg">PUTRA AZARI</h3>
+                                    <p class="font-mono text-xs text-cyan-400">Analyst &amp; SysAdmin</p>
+                                </div>
+                                <div class="w-full pt-3 border-t border-slate-800 font-mono text-[11px] text-left text-slate-400 space-y-1">
+                                    <div><span class="text-slate-600">CLEARANCE:</span> LEVEL 3</div>
+                                    <div><span class="text-slate-600">LOC:</span> INDONESIA / REMOTE</div>
+                                    <div><span class="text-slate-600">PGP ID:</span> 0x9FA23C78B</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-2/3 space-y-6">
+                    <div class="font-mono text-cyan-400 text-sm tracking-wider uppercase">// EXECUTIVE_SUMMARY</div>
+                    <h2 class="text-3xl font-bold text-white">Menghubungkan Jejak Digital dengan Keamanan Server Skala Tinggi</h2>
+                    <p class="text-slate-300 leading-relaxed font-sans">
+                        Saya adalah praktisi keamanan siber dengan fokus ganda: <strong class="text-cyan-400">Investigasi Intelijen Digital (OSINT/Maltego)</strong> dan <strong class="text-emerald-400">Sistem Administrator VPS High Availability</strong>. Dengan metodologi ilmiah forensik digital, saya melacak hubungan data kompleks antar domain, entitas IP, dan artefak malware.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed font-sans">
+                        Di sisi infrastruktur, saya mendesain, mengamankan (hardening), dan memelihara server VPS berbasis Linux (Ubuntu/Debian/CentOS) untuk kebutuhan enterprise, reverse proxy, VPN terenkripsi, hingga proteksi DDoS.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 font-mono text-xs">
+                        <div class="p-3 bg-cyber-card rounded border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-magnifying-glass-chart text-cyan-400 text-xl mt-1"></i>
+                            <div>
+                                <div class="text-white font-bold mb-1">Maltego Intel Mapping</div>
+                                <div class="text-slate-400">Penyusunan peta investigasi entitas, DNS, Social Media, &amp; Darkweb footprint.</div>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-cyber-card rounded border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-microchip text-emerald-400 text-xl mt-1"></i>
+                            <div>
+                                <div class="text-white font-bold mb-1">Forensics &amp; IR</div>
+                                <div class="text-slate-400">Memory acquisition, volatility analysis, packet capture analysis (Wireshark).</div>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-cyber-card rounded border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-server text-purple-400 text-xl mt-1"></i>
+                            <div>
+                                <div class="text-white font-bold mb-1">VPS Hardening &amp; Nginx</div>
+                                <div class="text-slate-400">UFW, Fail2Ban, SSL/TLS, Docker containerization, &amp; Automated Backup.</div>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-cyber-card rounded border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-shield-halved text-cyan-400 text-xl mt-1"></i>
+                            <div>
+                                <div class="text-white font-bold mb-1">Server Security Audit</div>
+                                <div class="text-slate-400">Vulnerability scan, port audit, log parsing, dan mitigation strategy.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MALTEGO FEATURE SECTION -->
+    <section id="maltego" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="font-mono text-cyan-400 text-sm tracking-wider uppercase mb-2">// MODULE_01: OSINT &amp; LINK ANALYSIS</div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Kemampuan Investigasi Maltego</h2>
+                <p class="text-slate-400 mt-3 font-sans">Transformasi data acak menjadi visual peta intelijen yang saling terhubung menggunakan Maltego Graph Transforms &amp; Custom Entities.</p>
+            </div>
+
+            <!-- INTERACTIVE MALTEGO GRAPH DEMO -->
+            <div id="maltego-demo" class="bg-cyber-card border border-cyan-500/30 rounded-2xl overflow-hidden shadow-2xl mb-12">
+                <div class="bg-slate-900 px-6 py-4 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+                    <div class="flex items-center gap-3">
+                        <span class="text-red-500"><i class="fa-solid fa-circle"></i></span>
+                        <span class="text-yellow-500"><i class="fa-solid fa-circle"></i></span>
+                        <span class="text-green-500"><i class="fa-solid fa-circle"></i></span>
+                        <span class="text-slate-400 ml-2 font-bold">Maltego Classic v4.6 - [Case_091_PutraAzari.mtgx]</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button id="btn-run-transform" class="px-3 py-1.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 hover:bg-cyan-500/30 transition-all">
+                            <i class="fa-solid fa-play mr-1"></i> Run Transform
+                        </button>
+                        <button id="btn-reset-graph" class="px-3 py-1.5 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">
+                            <i class="fa-solid fa-rotate-right mr-1"></i> Reset Layout
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    <!-- Graph Canvas Area -->
+                    <div class="lg:col-span-8 bg-slate-950 p-4 relative min-h-[420px] flex items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-800">
+                        <canvas id="mainMaltegoCanvas" class="w-full h-full min-h-[400px] cursor-pointer"></canvas>
+                        <div class="absolute top-4 left-4 font-mono text-[11px] bg-slate-900/80 p-2.5 rounded border border-slate-800 text-slate-400 space-y-1">
+                            <div class="text-cyan-400 font-bold">Entity Types Legend:</div>
+                            <div><span class="inline-block w-2.5 h-2.5 rounded-full bg-cyan-400 mr-1"></span> Domain / IP Node</div>
+                            <div><span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 mr-1"></span> Person / Identity</div>
+                            <div><span class="inline-block w-2.5 h-2.5 rounded-full bg-purple-400 mr-1"></span> VPS Infrastructure</div>
+      
